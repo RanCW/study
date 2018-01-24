@@ -12,24 +12,28 @@ ws.on('error',function (err) {
 ws.on('drain',function () {
   console.log('drain');
 })
-let flag=true;
 let i=10;
-if(flag){
-  while(flag&&i>0){
-    flag=ws.write('孤傲的山鹰'+i,'utf8',function (err) {
-      console.log('callback');
-    })
-    i--
+function write() {
+  let flag=true;
+  if(flag){
+    while(flag&&i>0){
+      flag=ws.write('孤傲的山鹰'+i,'utf8',function (err) {
+        console.log('callback');
+      })
+      i--
+    }
   }
 }
+
 
 // ws.write('孤傲的山鹰haojiujie','utf8',function (err) {
 //   console.log('callback');
 // })
 ws.on('drain',function () {
   console.log('drain');
-  // ws.write();
+  write();
 })
+write();
 
 // let buf=Buffer.from('孤傲的山鹰');
 // console.log(buf);
