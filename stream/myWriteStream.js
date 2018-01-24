@@ -49,9 +49,7 @@ class MyWriteStream extends EvetentEmiter{
       this.writing=true;
       this._write(chunk,encoding,()=> {
         this.clearBuffer()
-        if(this.length==0){
-          callback();
-        }
+        callback();
       });
     }
     return ret;

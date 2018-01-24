@@ -26,9 +26,10 @@ if(flag){
 // ws.write('孤傲的山鹰haojiujie','utf8',function (err) {
 //   console.log('callback');
 // })
-// ws.on('drain',function () {
-//   // ws.write();
-// })
+ws.on('drain',function () {
+  console.log('drain');
+  // ws.write();
+})
 
 // let buf=Buffer.from('孤傲的山鹰');
 // console.log(buf);
