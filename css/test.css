@@ -25,10 +25,33 @@ body,html{
   padding: 20px 10px;
 }
 .mark-item{
-  background: #DA4035;
+  background: #ccc;
   color: #fff;
 }
+.demo-content{
+  border: 1px solid #e4393c;
+}
 /*行内元素水平居中*/
-.line-vertical-center-one{
-  text-align: center;
+/*方案1*/
+.line-align-center-one{
+  height: 400px;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  border: 1px solid #e4393c;
+}
+/*方案2*/
+.line-align-center-two{
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  margin: auto;
+  height: 400px;
+
+}
+.mark-two{
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  margin: auto;
 }
