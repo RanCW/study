@@ -1,23 +1,29 @@
 ## css居中常用的几种方式
  ### 行内元素水平、垂直居中
-   * 方案一：
-   
+   * 方案一(不设置居中元素宽高)，代码如下：
+   使用display: table;display:table-cell；vertical-align:middle;属性
   ```html
    <!--html代码如下：-->
-    <div class="line-align-center-one">
-        <span class="mark-item">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maiores sint totam ullam. A asperiores assumenda commodi facere, non perspiciatis suscipit vero? Eaque enim explicabo maiores nihil nisi numquam, tempore.
-       </span>
+    <div class="panel-body line-align-center-one-content">
+      <div class="line-align-center-one">
+         <span class="mark-item">
+            这里是测试的内容 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae earum nobis unde vel. Ab accusantium distinctio ex ipsa necessitatibus. Dolorum facere impedit laudantium magni minima molestiae, nam quidem soluta veniam.
+         </span>
+      </div>
     </div>
    ```
    ```css
     /*css代码段*/
+    .line-align-center-one-content{
+      display: table;
+      width: 100%;
+    }
     .line-align-center-one{
       height: 400px;
-      width: 100%;
       display: table-cell;
       vertical-align: middle;
       border: 1px solid #e4393c;
+      text-align: center;
     }
     .mark-item{
       background: #ccc;
@@ -26,6 +32,116 @@
 ```
 这里主要是使用text-align:center;是元素水平居中
 
-   * 方案二：
+   * 方案二：使用绝对定位+位移(不设置居中元素宽高)，代码如下：
+   ```html
+   <!--html代码段如下-->
+    <div class="line-align-center-two">
+       <span class="mark-two">
+          这里是一个行内元素 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam exercitationem pariatur recusandae voluptate. Amet, animi architecto commodi cumque distinctio, dolorum eaque laborum modi molestiae mollitia nesciunt perferendis rem tenetur voluptate!
+       </span>
+    </div>
+```
+  ```css
+    /*css代码段如下*/
+    .line-align-center-two{
+      position: relative;
+      height: 400px;
+      border: 1px solid #e4393c;
+    }
+    .mark-two{
+      background: #ccc;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%) ;
+    }
+```
+
+  * 方案三（不设置居中元素宽高）：使用相对定位+位移+text-align: center;代码如下：
+  
+   ```html
+    <-- html代码段如下-->
+    <div class="line-align-center-three">
+       <span class="mark-three">
+          这里是一个行内元素
+       </span>
+    </div>
+   ```
+  ```css
+    /*css代码段如下*/
+    .line-align-center-three{
+      height: 400px;
+      border: 1px solid #e4393c;
+      text-align: center;
+    }
+    .mark-three{
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%) ;
+      background: #ccc;
+      color: #fff;
+    }
+  ```
+  
+  * 方案四（不设置居中元素宽高）：使用flex布局，代码如下：
+  
+  ```html
+    <!--html代码-->
+    <div class="line-align-center-four">
+      <span class="mark-four">
+        这里是一个行内元素 lorem
+      </span>
+    </div>
+  ```
+  ```css
+    .line-align-center-four{
+      display:flex;/*Flex布局*/
+      display: -webkit-flex; /* Safari */
+      align-items:center;/*指定垂直居中*/
+      height: 400px;
+      border: 1px solid #e4393c;
+      justify-content: center;/*指定水平居中*/
+    }
+    .mark-four{
+      background: #ccc;
+      color: #fff;
+    }
+  ```
+  
+  * 方案五（不设置居中元素宽高）：使用伪类，代码如下：
+    
+    ```html
+      <!--html代码如下-->
+      <div class="line-align-center-five">
+        <span class="mark-five">
+            这里是一个行内元素 Lorem
+        </span>
+      </div>
+    ```
+    ```css
+      /*css代码如下*/
+      .line-align-center-five {
+        height: 400px;
+        border: 1px solid #e4393c;
+        text-align: center;/*水平居中*/
+        font-size: 0;/*这一个很重要*/
+      }
+      .line-align-center-five:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+      }
+      .mark-five {
+        font-size: 14px;
+        display: inline-block;
+        vertical-align: middle;
+        background: #ccc;
+        color: #fff;
+        line-height: 26px;
+      }
+    ```
+  
    
 

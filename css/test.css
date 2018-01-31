@@ -1,57 +1,124 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body,html{
+
+body, html {
   font-size: 14px;
 }
-.container{
+
+.container {
   width: 1000px;
   margin: 30px auto;
 }
-.panel{
+
+.panel {
   border: 1px solid #ccc;
   border-radius: 10px;
   margin-top: 30px;
 }
-.panel-header{
+
+.panel-header {
   font-size: 16px;
   line-height: 40px;
   border-bottom: 1px solid #ccc;
   padding: 0 10px;
 }
-.panel-body{
+
+.panel-body {
   padding: 20px 10px;
 }
-.mark-item{
+
+.mark-item {
   background: #ccc;
   color: #fff;
 }
-.demo-content{
+
+.demo-content {
   border: 1px solid #e4393c;
 }
+
 /*行内元素水平居中*/
 /*方案1*/
-.line-align-center-one{
-  height: 400px;
+.line-align-center-one-content {
+  display: table;
   width: 100%;
+}
+
+.line-align-center-one {
+  height: 400px;
   display: table-cell;
   vertical-align: middle;
   border: 1px solid #e4393c;
+  text-align: center;
 }
-/*方案2*/
-.line-align-center-two{
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;
-  margin: auto;
-  height: 400px;
 
+/*方案2*/
+.line-align-center-two {
+  position: relative;
+  height: 400px;
+  border: 1px solid #e4393c;
 }
-.mark-two{
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;
-  margin: auto;
+
+.mark-two {
+  background: #ccc;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*方案三*/
+.line-align-center-three {
+  height: 400px;
+  border: 1px solid #e4393c;
+  text-align: center;
+}
+
+.mark-three {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ccc;
+  color: #fff;
+}
+
+/*方案四*/
+.line-align-center-four {
+  display: flex; /*Flex布局*/
+  display: -webkit-flex; /* Safari */
+  align-items: center; /*指定垂直居中*/
+  height: 400px;
+  border: 1px solid #e4393c;
+  justify-content: center;
+}
+
+.mark-four {
+  background: #ccc;
+  color: #fff;
+}
+
+/*方案五*/
+/*css代码如下*/
+.line-align-center-five {
+  height: 400px;
+  border: 1px solid #e4393c;
+  text-align: center;/*水平居中*/
+  font-size: 0;/*这一个很重要*/
+}
+.line-align-center-five:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+.mark-five {
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  background: #ccc;
+  color: #fff;
+  line-height: 26px;
 }
