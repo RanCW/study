@@ -5,7 +5,7 @@
   ```html
    <!--html代码如下：-->
     <div class="line-align-center-one">
-        <span class="mark-item mark-one">
+        <span class="mark-item">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maiores sint totam ullam. A asperiores assumenda commodi facere, non perspiciatis suscipit vero? Eaque enim explicabo maiores nihil nisi numquam, tempore.
        </span>
     </div>
