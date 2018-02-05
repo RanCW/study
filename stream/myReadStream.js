@@ -15,6 +15,7 @@ class myReadStream extends EventEmiter{
     this.pos=undefined;
     this.bytesRead=0;
     this.length=0;
+    this.buffer=Buffer.alloc(this.highWaterMark);
   }
   open(){
     fs.open(this.path,this.flags,this.mode,(err,fd)=>{
@@ -32,9 +33,13 @@ class myReadStream extends EventEmiter{
     })
   }
   read(){
+    let readSize=Math.min(this.highWaterMark,);
+    fs.read(this.fd,this.buffer,this.start,readSize,this.pos,(err,bytesRead)=>{
 
+    })
   }
   destroy(){
+    fs.close(this.fd)
 
   }
 }

@@ -143,5 +143,82 @@
       }
     ```
   
+   ### 块级元素，水平、垂直居中
+   块级元素的居中同样可以使用上述的行内元素的居中方案。
    
+   ### 通用方案
+   * 在已知容器和居中元素的宽高的情况下，可以使用margin来调节元素居中；
+   ```html
+   <!--html如下-->
+   <div class="common-item">
+     <div class="common-one">
+       这里是内容区域，宽高100
+     </div>
+   </div>
+   
+   ```
+   ```css
+    /*css代码如下：*/
+    .common-item{
+      height: 400px;
+      border: 1px solid #e4393c;
+    }
+    .common-one{
+      width: 100px;
+      height: 100px;
+      border:1px solid blue;
+      margin: 150px auto 0;
+    
+    }
 
+   ```
+   * 在已知居中元素的宽高尺寸的情况下，可以使用绝对定位或相对定位+margin负值来实现
+   ```html
+    <div class="common-item-two">
+      <div class="common-two">
+        这里是内容区域，宽高100
+      </div>
+    </div>
+   ```
+   ```css
+     .common-item-two{
+       height: 400px;
+       border: 1px solid #e4393c;
+       position: relative;
+     }
+     .common-two{
+       width: 100px;
+       height: 100px;
+       border:1px solid blue;
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       margin-top: -50px;
+       margin-left: -50px;
+     }
+   ```
+   或
+   
+   ```html
+      <div class="common-item-two">
+        <div class="common-two">
+          这里是内容区域，宽高100
+        </div>
+      </div>
+   ```
+   ```css
+     .common-item-two{
+       height: 400px;
+       border: 1px solid #e4393c;
+     }
+     .common-two{
+       width: 100px;
+       height: 100px;
+       border:1px solid blue;
+       position: relative;
+       top: 50%;
+       left: 50%;
+       margin-top: -50px;
+       margin-left: -50px;
+     }
+   ```
